@@ -20,20 +20,48 @@
                 </div>
                 <div class="card-body">
                     <form name="items" action="/search" method="POST">
-                        Items <select name="items">
-                            <option value="none"></option>
-                            <option value="Screws">Screws</option>
-                            <option value="Broom">Broom</option>
-                            <option value="DIY Construction">DIY Construction</option>
-                            <option value="Nails">Nails</option>
+                        Code<input type="text" name="quantity" style="width: 50px">
+                    </form>
+                    <br>
+                    <form name="items" action="/search" method="POST">
+                        Vendor<input type="text" name="quantity" style="width: 50px">
+                    </form>
+                    <br>
+                    <form name="altItem" action="/search" method="POST">
+                        Accept Alt Item
+                        <select name="altItems">
+                            <option value="#">ACCEPT ALT ITEM</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
                         </select>
                     </form>
                     <br>
                     <form name="quantity" action="/search" method="POST">
                         Quantity<input type="text" name="quantity" style="width: 50px">
-                        <br>
-                        <div class="actions"><input type="submit" value="Submit" style="margin-top: 20px"></div>
-                    </form> 
+                    </form>
+                    <br>
+                    <div class="actions"><input type="submit" value="Submit" style="margin-top: 20px"></div>
+                    <br>
+                    <table class = "table table-hover" border="1" cellpadding="5" cellspacing="5">
+                            <thead>
+                              <tr>
+                                <th>Item Code</th>
+                                <th>Item Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Vendor</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in table %}
+                                    <tr>
+                                    {% for d in row %}
+                                        <td>{{ d }}</td>
+                                    {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                 </div> 
             </div>
         </div>

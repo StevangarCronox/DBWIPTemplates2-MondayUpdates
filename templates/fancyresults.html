@@ -21,13 +21,25 @@
                     </div>
                     <div class="card-body">
                         <table class = "table table-hover" border="1" cellpadding="5" cellspacing="5">
-                            {% for row in data %}
-                                <tr>
-                                {% for d in row %}
-                                    <td>{{ d }}</td>
+                            <thead>
+                              <tr>
+                                <th>MIID</th>
+                                <th>SeqNo</th>
+                                <th>ItemCode</th>
+                                <th>DeliverBy</th>
+                                <th>Quantity</th>
+                                <th>AcceptAltItem</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in data %}
+                                    <tr>
+                                    {% for d in row %}
+                                        <td>{{ d }}</td>
+                                    {% endfor %}
+                                    </tr>
                                 {% endfor %}
-                                </tr>
-                            {% endfor %}
+                            </tbody>
                         </table>
                     </div>
                 </div>
